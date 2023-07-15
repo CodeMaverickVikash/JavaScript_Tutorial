@@ -7,28 +7,8 @@
 // console.log(Boolean({}));
 // console.log(Boolean(''));
 
-// const money = 0;
-// if(money) {
-//     console.log("We have money;");
-// } else {
-//     console.log("We don't have money");
-// }
-
 // let height; // it's a declaration, not defination
 // (height) ? console.log("YAY, Height is defined") : console.log("Undefined");
-
-// Switch statement
-// const day = 'Monday';
-// switch(day) {
-//     case 'Monday': // day === 'Monday'
-//         console.log("It's a monday");
-//         break;
-//     case 'Tuesday':
-//         console.log("It's a tuesday");
-//         break;
-//     default:
-//         console.log("Date are not matched");
-// }
 
 // Debugging with the console and breakpoint
 // const measureKelvin = function() {
@@ -77,7 +57,6 @@ const jonas = {
 };
 jonas.calcAge();
 
-// Function accepting callback function
 const upperFirstWord = function (str) {
     const [first, ...others] = str.split(' ');
     return [first.toUpperCase(), ...others].join(' ');
@@ -90,10 +69,7 @@ const transformer = function (str, fn) {
 }
 
 // transformer('Javascript is the best', upperFirstWord);
-transformer('Javascript is the best', function(str) {
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
-});
+transformer('Javascript is the best', upperFirstWord);
 
 // Function returns function
 const greet = function (greeting) {

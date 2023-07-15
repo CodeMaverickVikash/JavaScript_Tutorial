@@ -25,6 +25,7 @@ const vikash = 'Hello'; // no change, no redeclare
 // let is block-scoped.	                        |   var is function scoped.
 // let does not allow to redeclare variables.   |   var allows to redeclare variables.
 // Hoisting does not occur in let.	            |   Hoisting occurs in var.
+// add itself into window object                | does not
 
 // case: 1
 let getNumber = function () {
