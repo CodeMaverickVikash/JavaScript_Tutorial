@@ -1,5 +1,5 @@
 // Ajax is used for backend codeing 
-onsole.log("Ajax tutorial in one video");
+// onsole.log("Ajax tutorial in one video");
 
 
 // let fetchBtn = document.getElementById('fetchBtn');
