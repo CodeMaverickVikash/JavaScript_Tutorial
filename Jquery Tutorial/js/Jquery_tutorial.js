@@ -1,3 +1,15 @@
+$(document).ready(function() {
+    console.log("Document is ready1");
+})
+
+// Shorthand for $(document).ready()
+$(function() {
+    console.log("Document is ready2");
+});
+
+$(window).on("load", function() {
+    console.log( "window loaded" );
+});
 
 $(document).ready(function () {
     // Form Event - focus(), blur(), change(), submit(), select()
