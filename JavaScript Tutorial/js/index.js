@@ -539,3 +539,16 @@ const jonas = {
         console.log(2037 - this.year);
     }
 }
+
+// Dom
+// contextmenu event
+$(window).contextmenu(function () {
+    console.log('right clicked');
+});
+
+// submit event on form
+$("#myForm").submit(function (event) { // support more than previous approach
+    event.preventDefault();
+    console.log(document.myForm);
+    console.log(event.target.elements.username.value);
+});
