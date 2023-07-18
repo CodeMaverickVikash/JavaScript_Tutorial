@@ -1,11 +1,6 @@
 // Whenever run javascript program global execution context is created. it has two component one is momory component also know as varibale env and code component. 
 
-// 1. way to print in js
-// console.log('this');
-// alert("me");
-// document.write("this is document write");
-
-// 2. js console API
+// --------------------------------------- console API ----------------------------------
 // console.time('your code took');
 // console.log('hello console');
 // console.log(4+23);
@@ -19,7 +14,7 @@
 // var, let and const
 const vikash = 'Hello'; // no change, no redeclare
 
-// Difference btw let and var
+// ------------------------------ Difference btw let and var -------------------------------
 // let	                                        |      var
 // -----------------------------------------------------------------------------
 // let is block-scoped.	                        |   var is function scoped.
@@ -27,21 +22,18 @@ const vikash = 'Hello'; // no change, no redeclare
 // Hoisting does not occur in let.	            |   Hoisting occurs in var.
 // add itself into window object                | does not
 
-// case: 1
-let getNumber = function () {
-    var hum = "Kaun";
-    let you = "don't_no";
-    if (hum) {
-        var your = 'name';
-        let me = "vikash";
-        console.log(your + " " + me + " " + hum + " " + you);
-    } else {
-        console.log("What's your name?");
+let abc = function () {
+    for (var i = 0; i < 12; i++) {
+        console.log(i);
     }
+    console.log(i); // ok
 
-    console.log(your + " " + me);
+    for (let i = 0; i < 12; i++) {
+        console.log(i);
+    }
+    console.log(i); // not ok
 }
-// getNumber();
+// abc();
 
 // case: 2
 let sanu = 'Hyy'; // no redeclare
@@ -49,7 +41,7 @@ let sanu = 'Hyy'; // no redeclare
 var marks = '200'; // allow redeclare
 // var marks = '300'; // no error
 
-// case: 3
+// ------------------------------------------- Hoisting --------------------------------------
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
 // Hoisting are two types varibale hoisting and function hoisting
 x = 5; // assign
@@ -80,7 +72,7 @@ function getName() {
 //     console.log("Hosting: Vikash");
 // }
 
-// 3. variable, datatypes and operator in js
+// -------------------------------------- variable, datatypes and operator ---------------------
 // var num1= 23;
 // var num2= 3;
 // console.log(num1+num2);
@@ -96,68 +88,25 @@ function getName() {
 // // 1. primitive datatype: undefined, null, Number, String, Boolean, Symbol
 // // 2. reference datatype: Array and Object
 
-// // conditional statement in js
-// var age= 23;
-// if (age<2) {
-//     console.log('you are a2 years old');
-// }
-// else if(age<=5){
-//     console.log('you are a kid');
-// }
-// else if (age>18) {
-//     console.log('you are a young men');
-// }
-// else{
-//     console.log('you are a old men');
-// }
 
-// // loops in js
-// var hrr= [1,3,4,5];
+// ------------------------ Loops in js - for, forEach, while, do-while, for-of, for-in ----------
 
-// // for loop in js
-// // for(var i=0;  i<hrr.length; i++){
-// //     console.log(hrr[i]);
-// // }
-
-// // forEach loop in js
-// // hrr.forEach(function(element){
-// //     console.log(element);
-// // });
-
-// // while loop in js
-// // const ac=0;
-// // ac++;
-// // ac= ac+1;
-// let j=0;
-// // while(j<hrr.length){
-// //     console.log(hrr[j]);
-// //     j++;
-// // }
-
-// // do-while loop in js
-// do{
-//     console.log(hrr[j]);
-//     j++;
-// }while(j<hrr.length);
-// console.clear();
-
-// Arrow function
+// ------------------------------ Regular and Arrow function --------------------------------------
 // One liners do not require braces/return
 // one line will automatically return
-// const greet = ()=>{
-//     return "good morning";
-// }
-// const greet = () =>  "Good Morning";
-// const greet = () =>  ({name: "harry"});
 
-// Single parameters do not need parenthesis 
-// but you will have to put parenthesis if there are multiple paramteres
-// const greet = name => "Good Morning " + name + ending;
+let greet = ()=>{
+    return "good morning";
+}
+greet = () =>  "Good Morning";
+greet = () =>  ({name: "Vikash"});
 
-// console.log(greet('Harry'))
+// Single parameters do not need parenthesis but you will have to put parenthesis if there are multiple paramteres
+greet = name => "Good Morning " + name + ending;
 
-// // Objects methods in js
-window.person = {
+// ---------------------------------------- Objects methods ---------------------------------------
+// JSON.stringify, JSON.parse
+var person = {
     firstName: "John",
     lastName: "Doe",
     id: 5566,
@@ -166,15 +115,11 @@ window.person = {
     }
 };
 
-// JavaScript object
 const jsObj = {
     fname: "Vikash",
     lname: "Maskhare",
     que: "How are you?"
 }
-
-console.log(jsObj)
-console.log(typeof (jsObj));
 
 const convertedIntoJson = JSON.stringify(jsObj);
 console.log(convertedIntoJson)
@@ -182,36 +127,21 @@ console.log(typeof (convertedIntoJson));
 
 const convertedIntoObject = JSON.parse(convertedIntoJson);
 console.log(convertedIntoObject)
-console.log(typeof (convertedIntoObject))
+console.log(typeof (convertedIntoObject));
 
-// Json
-function isJsonObject(strData) {
-    try {
-        JSON.parse(strData);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
-let jsondata = '{"username": "admin"}';
-console.log(typeof jsondata);
-let notjsondata = 'username-admin';
-console.log(isJsonObject(jsondata)); // returns true
-console.log(isJsonObject(notjsondata)); // returns false
-
-// // Array methods
+// ------------------------------------ Array methods ----------------------------------
+// indexOf, pop, join, push, shift, unshift, toString
 myarr = ["fan", 'camera', 23, null, true];
-// console.log(myarr.length);
 // myarr.indexOf(23);
-// // myarr.pop();
-// // myarr.join(" * ");
-// // myarr.push("vikash");
-// // myarr.shift();
-// // myarr.unshift("vikash");
-// // myarr.toString();
-// console.log(myarr);
+// myarr.pop();
+// myarr.join(" * ");
+// myarr.push("vikash");
+// myarr.shift();
+// myarr.unshift("vikash");
+// myarr.toString();
 
-// // String methods
+// ---------------------------------------- String methods ---------------------------------
+// indexOf, lastIndexOf, slice, split, replace
 window.mystring = "vikash is a good boy good";
 // console.log(mystring.length);
 // console.log(mystring.indexOf("good"));
@@ -220,15 +150,15 @@ window.mystring = "vikash is a good boy good";
 // d=mystring.replace("vikash", "sanu");
 // console.log(d, mystring);
 
-// // Date in js
-// // let mydate= new Date;
-// // console.log(mydate.getTime());
-// // console.log(mydate.getFullYear());
-// // console.log(mydate.getDay());
-// // console.log(mydate.getMinutes());
-// // console.log(mydate.getHours());
+// --------------------------------------------- Date -----------------------------------
+// let mydate= new Date;
+// console.log(mydate.getTime());
+// console.log(mydate.getFullYear());
+// console.log(mydate.getDay());
+// console.log(mydate.getMinutes());
+// console.log(mydate.getHours());
 
-// // DOM MANUPILATION: document object model
+// ----------------------------- DOM MANUPILATION: document object model ----------------------
 // let elem= document.getElementById('click');
 // console.log(elem);
 
@@ -238,29 +168,14 @@ window.mystring = "vikash is a good boy good";
 // elemclass[0].classList.add("bg-primary");
 // elemclass[0].classList.add("text-success");
 
-// // JSON- javascript object notation
-// console.clear();
-// // Event in js
-// function clicked(){
-//     console.log('button was clicked');
-// }
-
-// window.onload= function(){
-//     console.log('window was loaded');
-// }
-
-// firstcontainer.addEventListener('click', function(){
-//     console.log('click on container');
-// })
-
-// Cookies
+// ------------------------------------------- Cookies -----------------------------------
 // to set cookie
 // document.cookie= "username=vikash";
 
 // to access cookie in string format
 // console.warn(document.cookie);
 
-// // local Storage in javascript
+// ---------------------------------- Local Storage ---------------------------
 // To set data 
 localStorage.setItem("fname", "vikash");
 
@@ -273,7 +188,7 @@ localStorage.setItem("fname", "vikash");
 // To clear localstorage
 // localStorage.clear();
 
-// Session storage
+// -------------------------------------------- Session storage ------------------------------
 // To set data
 sessionStorage.setItem('nameKya', 'vikash');
 
@@ -286,6 +201,7 @@ sessionStorage.setItem('nameKya', 'vikash');
 // To clear sessionStorage
 // sessionStorage.clear();
 
+// -------------------------------------------- Promise --------------------------------------
 // Promises - Promises are used to handle asynchronous operations in JavaScript. - it has three stages 1) Pending 2) Fullfilled 3) Rejected
 /* Promise()         ------- it will take condition
    /     \
@@ -390,7 +306,7 @@ function prom() {
 // });
 
 
-// async and await
+// --------------------------------------------- async and await --------------------------------
 // function test() {
 //     return "Hello";
 // }
@@ -404,13 +320,13 @@ async function test() {
 //     console.log(result);
 // });
 
-/*
-Scope:
+/* ---------------------------------------------- Scope: --------------------------------------
 * Block scope - Variables declared inside a pair of curly braces cannot be accessed from outside.
 * Function scope - Variables declared inside a function connot be accessed from outside the function.
 * Global scope - Gloabally scoped variable can be accessed inside a block or function.
 */
 
+// --------------------------------------------- Ternary operator -----------------------------
 // Sometimes, we need to assign a variable depending on a condition. that time we use conditional(Ternary) operator (?)
 // let result = condition ? value1 : value2;
 
@@ -422,7 +338,7 @@ Scope:
 //   'What an unusual age!';
 // alert( message );
 
-// Nullish coalescing operator '??'
+// ---------------------------------------- Nullish coalescing operator '??' ------------------------------
 // The result of a ?? b is: ?? returns the first argument if it’s not null/undefined. Otherwise, the second one
 // let user;
 // alert(user ?? "Anonymous"); // Anonymous (user not defined)
@@ -433,8 +349,7 @@ Scope:
 // // shows the first defined value:
 // alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
 
-/* 
-The important difference between || and ?? is that:
+/* ------------------------------- The important difference between || and ?? is that:
     || returns the first truthy value.
     ?? returns the first defined value.
 */
@@ -449,14 +364,14 @@ The important difference between || and ?? is that:
 
 // hello("vikash");
 
-// The “non-existing property” problem: solution - Optional chaining '?.'
+// -------------------- The “non-existing property” problem: solution - Optional chaining '?.'
 // let user = {}; // a user without "address" property
 // console.log(user.address.street); // Error!
 
 // let user = {}; // user has no address
 // console.log( user?.address?.street ); // undefined (no error)
 
-// Regular expression
+// ----------------------------------------- Regular expression ----------------------------------
 // let str = 'vikash is a something';
 // var reg = /vikash/; // we always write regEx btw / and /
 
@@ -488,7 +403,7 @@ let regex = /harrsdfgy/;
 // JavaScript modules allow you to break up your code into multiple files. : means - import and export
 // If we are using normal export then need to use {}, and using default export, don,t need  to use {}. 
 
-// Bind(), call() and apply()
+// ------------------------------ Bind(), call() and apply() -------------------------
 var pokemon = {
     firstname: 'Pika',
     lastname: 'Chu ',
@@ -526,10 +441,6 @@ const dataObj = {
 
 console.log(JSON.stringify(dataObj)); // first stringify() method looks for toJSON() inside object if it exists see result
 
-// Execution contexts and call stack
-// Scope and scope chain
-// Hoisting 
-
 // this keyword, regular function and arrow function
 const jonas = {
     firstName: 'vikash',
@@ -552,3 +463,8 @@ $("#myForm").submit(function (event) { // support more than previous approach
     console.log(document.myForm);
     console.log(event.target.elements.username.value);
 });
+
+
+// Execution contexts and call stack
+// Scope and scope chain
+// Hoisting 
