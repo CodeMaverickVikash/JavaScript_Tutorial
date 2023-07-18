@@ -55,6 +55,17 @@ for(const [i, itm] of menu.entries()) {
 }
  
 // Optional chaining '?.' - is a safe way to access nested object properties, even if an intermediate property doesn’t exist.
+// Optional chaining
+// let data = {
+//     ok: function() {
+//         console.log("ok");
+//     },
+//     no: {
+//         status: true
+//     }
+// };
+// data.ok && data.ok();
+// console.log(data?.no?.status);
 // let user = {}; // user has no address
 // console.log(user.address.street); // Error!
 
