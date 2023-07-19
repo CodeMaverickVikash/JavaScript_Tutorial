@@ -157,105 +157,14 @@ h3Demo.classList.remove('hum', 'you');
 // Don't use
 // h3Demo.className = 'Jonas';
 
-// Async js programming
-// Callbacks, promises, async & await
-// Asynchronus - Sequence not defined
-// Synchronus - Sequence decided
-let data = [
-    {
-        name: 'vikash',
-        email: 'kj@gmail.com'
-    },
-    {
-        name: 'sanu',
-        email: 'sjsdks@gmail.com'
-    }
-]
+// --------------------------------------- contextmenu event -------------------------------------------
+$(window).contextmenu(function () {
+    console.log('right clicked');
+});
 
-function getData() {
-    let output = '';
-    setTimeout(() => {
-        data.map((d) => {
-            output += `${d.name} `
-        });
-        console.log(output);
-    }, 1000);
-}
-
-function createData(newData) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            data.push(newData);
-            checker = false;
-            if (!checker) {
-                resolve();
-            } else {
-                reject('There is a error!');
-            }
-        }, 2000);
-    })
-}
-
-// createData({name: 'Hum', email: 'you@gmail.com'});
-// getData();
-
-// Callback - is not work with promise
-// function createData(newData, callback) {
-//     setTimeout(() => {
-//         data.push(newData);
-//         callback();
-//     }, 2000);
-// }
-// createData({name: 'Hum', email: 'you@gmail.com'}, getData);
-
-// Promise
-// createData({name: 'Hum', email: 'you@gmail.com'}).then(getData).catch(err => console.error(err));
-
-// Async & Await - it works only with promise
-// async function start() {
-//     await createData({name: 'Hum', email: 'you@gmail.com'}); // The keyword await makes JavaScript wait until that promise settles and returns its result.
-//     getData();
-// }
-// start();
-
-// Promise
-// fetch('https://jsonplaceholder.typicode.com/users', {
-//     method: 'GET'
-// }).then(response => response.json()).then(data => console.log(data));
-
-// Async & Await
-// async function getUsers() {
-//     let response = await fetch('https://jsonplaceholder.typicode.com/users');
-//     response.json().then(data => console.log(data));
-// }
-// getUsers();
-
-// fetch API also used to make ajax call
-
-// Closure - function ke ander function
-// Anonymus function - Which doesn't have name.
-// function sum(a) {
-//     let c = 4; // laxical scope
-//     return function (b) { // Anonymus function
-//         return a+b+c;
-//     }
-// }
-// let anonymasFunc = sum(2); // after first call value will not lost, keep retain is called closure
-// console.log(anonymasFunc(5));
-
-// Example second
-const sum = function (a, b, c) {
-    return {
-        getSumTwo: function () {
-            return a + b;
-        },
-
-        getSumThree() {
-            return a + b + c;
-        }
-    }
-}
-
-const storeObj = sum(4, 3, 6);
-console.log(storeObj.getSumTwo());
-console.log(storeObj.getSumThree());
+// submit event on form
+$("#myForm").submit(function (event) { // support more than previous approach
+    event.preventDefault();
+    console.log(document.myForm);
+    console.log(event.target.elements.username.value);
+});

@@ -95,11 +95,11 @@ function getName() {
 // One liners do not require braces/return
 // one line will automatically return
 
-let greet = ()=>{
+let greet = () => {
     return "good morning";
 }
-greet = () =>  "Good Morning";
-greet = () =>  ({name: "Vikash"});
+greet = () => "Good Morning";
+greet = () => ({ name: "Vikash" });
 
 // Single parameters do not need parenthesis but you will have to put parenthesis if there are multiple paramteres
 greet = name => "Good Morning " + name + ending;
@@ -201,6 +201,127 @@ sessionStorage.setItem('nameKya', 'vikash');
 // To clear sessionStorage
 // sessionStorage.clear();
 
+// ---------------------------------- Truthy and falsy values --------------------------------
+
+// We have 5 falsy values: 0, '', undefined, null, NaN
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Jonus'));
+// console.log(Boolean({}));
+// console.log(Boolean(''));
+
+// let height; // it's a declaration, not defination
+// (height) ? console.log("YAY, Height is defined") : console.log("Undefined");
+
+// --------------------------- Destructuring array and object ----------------------------------------
+let arr = [1, 2, 3];
+let [x, y, z] = arr; // array destructuring
+
+let obj = {
+    fname: "vikash",
+    lname: "maskhare",
+    phone: 293832738,
+    email: "viaksj@gmail.com"
+}
+
+let {fname, email} = obj; // you need to mentioned same name as mentioned in obj
+// console.log(fname + " " + email);
+
+let {fname: first_name, lname: last_name} = obj; // with new variable
+console.log(first_name, last_name);
+
+// -------------------------------------- Spread and rest operator on '...arr/obj' -------------------------------
+// Spread opt - pack out
+// Rest opt - pack in
+let arr1 = [9, 8, 7];
+let arr2 = [1, 2, ...arr1]; // arr2 built with spread opt
+// console.log(arr2);
+
+// SPREAD, because on right side of = 
+const arr3 = [1, 2, ...[3, 4, 5]];
+// REST, because on left side of = 
+const [a, , ...others] = [1, 2, 3, 4, 5];
+// console.log(a, others);
+
+let add = (...numbers)=> {}// packing in - rest opt 
+
+add(1, 2);
+// add(3, 4, 5);
+// add(6, 7, 8, 9);
+
+const item = [23, 45, 67];
+add(...item); // packing out
+
+// ----------------------------------- Nullish coalescing operator '??' ------------------------------
+// ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+let g = 45;
+const val = g ?? 10;
+console.log(val);
+ 
+// ------------------------------------- Optional chaining '?.' --------------------------------------
+// is a safe way to access nested object properties, even if an intermediate property doesn’t exist.
+// let data = {
+//     ok: function() {
+//         console.log("ok");
+//     },
+//     no: {
+//         status: true
+//     }
+// };
+// data.ok && data.ok();
+// console.log(data?.no?.status);
+// let user = {}; // user has no address
+// console.log(user.address.street); // Error!
+
+// let user = {}; // user has no address
+// console.log(user?.address?.street); // undefined (no error)
+
+// ------------------------------------- Object literal ----------------------------------------------
+// It's the enhanced version of obj, introduced in es6
+// Rules
+// 1) if key and value name is same then just write one
+id = 'Vikash';
+obj = {
+    // id: id // instead
+    id
+}
+
+// 2) computatuon on property or value of obj
+obj = {
+    [id+2]: [id + " " + "Maskhare"]
+}
+
+// 3) new function syntax
+obj = {
+    // show: function() {  } // instead
+    show() {  }
+}
+
+// ------------------------------- Template literal - backtick/backquote -----------------------------
+const greeting = 'Hello';
+const name = 'Vikash';
+const userMsg = `${greeting}, ${name}`; // template literal
+
+
+// Imediately invoked function expression - it will call once, we can't reuse it
+(function () {
+    console.log("This will never run again.");
+})();
+
+// In arrow function
+(() => {
+    console.log("This will ALSO never run again.");
+})();
+
+// LifeCycle DOM event
+document.addEventListener('DOMContentLoaded', function(e) {
+    console.log('HTML parsed and DOM tree built!', e);
+});
+
+window.addEventListener('load', function(e) {
+    console.log('Page fully loaded', e);
+});
+
 // -------------------------------------------- Promise --------------------------------------
 // Promises - Promises are used to handle asynchronous operations in JavaScript. - it has three stages 1) Pending 2) Fullfilled 3) Rejected
 /* Promise()         ------- it will take condition
@@ -211,114 +332,75 @@ resolve()  reject()
 /              \
 then()           catch()         ---------Both are callback function */
 
-// let complete = true;
-// const prom = new Promise(function(resolve, reject) {
-//     if(complete) {
-//         resolve('Successfull.');
-//     } else {
-//         reject('Failed.');
-//     }
-// });
-
-// console.log(prom); // it is the object
-
-// Another way
-// function prom(complete) {
-//     return new Promise(function(res, rej) {
-//         console.log('Fetching data, please wait.'); // it is in pending state
-//         if(complete) {
-//             res('I am successfull.');
-//         } else {
-//             rej('I am failed');
-//         }
-//     });
-// }
-
-// function prom(complete) {
-//     return new Promise(function(res, rej) {
-//         console.log('Fetching data, please wait.'); // it is in pending state
-//         setTimeout(() => {
-//             // codeing to fetch data from server
-//             if(complete) {
-//                 res('I am successfull.');
-//             } else {
-//                 rej('I am failed');
-//             }
-//         }, 2000);
-//     });
-// }
-
-// it will call two times to prom()
-// prom(false).then(function(result) {
-//     console.log(result);
-// });
-// prom(false).catch(function(error) {
-//     console.log(error);
-// });
-
-// Solution of above: method chaining
-// prom(true).then(function(result) {
-//     console.log(result);
-// }).catch(function(error) {
-//     console.log(error);
-// });
-
-function prom(a, b) {
-    return new Promise(function (res, rej) {
-        console.log('Fetching data, please wait.'); // it is in pending state
-        var c = a / b;
-        setTimeout(() => {
-            // codeing to fetch data from server
-            if (c) {
-                res(`Your answer: ${c}.`);
-            } else {
-                rej('Failed to calculate.');
-            }
-        }, 2000);
-    });
-}
-
-// prom(4, 5).then(function(result) {
-//     console.log(result);
-// }).catch(function(error) {
-//     console.log(error);
-// });
-
-// Real life example with ajax 
-function prom() {
+function fetchUser() {
     return new Promise(function (resolve, reject) {
         console.log('Fetching data, please wait.'); // it is in pending state
-        setTimeout(() => {
-            // codeing to fetch data from server
-            $.get('https://jsonplaceholder.typicode.com/users', function (data) {
-                resolve(data);
-            }).fail((err) => {
-                reject('Failed to load json data.');
-            })
-        }, 3000);
+        $.get('https://jsonplaceholder.typicode.com/users', function (data) {
+            resolve(data);
+        }).fail((err) => {
+            reject('Failed to load json data.');
+        })
     });
 }
 
-// prom().then(function(result) {
-//     console.log(result);
-// }).catch(function(error) {
-//     console.log(error);
-// });
+fetchUser().then(function (result) {
+    console.log(result);
+}).catch(function (error) {
+    console.log(error);
+});
 
 
-// --------------------------------------------- async and await --------------------------------
-// function test() {
-//     return "Hello";
-// }
 
-// asynchronus means work in background
-async function test() {
-    return "Hello";
+// --------------------------------------- Async js programming -------------------------------------
+// Callbacks, promises, async & await
+// Asynchronus - Sequence not defined
+// Synchronus - Sequence decided
+
+// Promise
+function fetchUserData() {
+    fetch('https://jsonplaceholder.typicode.com/users').then(resp => resp.json()).then(jsonData => {
+        console.log({ jsonData });
+    });
+    // .then() method se jo bhi return hota hai wo promise hota hai
+    let jsonDataWithPromise = fetch('https://jsonplaceholder.typicode.com/users').then(resp => resp.json()).then(jsonData => jsonData);
+    console.log({ jsonDataWithPromise });
 }
 
-// test().then((result)=> {
-//     console.log(result);
-// });
+// --------------------------------------------- async and await --------------------------------
+// Async & Await - it works only with promise
+async function fetchUserData() {
+    let resp = await fetch('https://jsonplaceholder.typicode.com/users'); // The keyword await makes JavaScript wait until that promise settles and returns its result.
+    let jsonData = await resp.json();
+    console.log(jsonData);
+}
+
+// ------------------------------ Closure - function ke ander function ------------------------------
+// ------------------------------ Anonymus function - Which doesn't have name. ----------------------
+function sum(a) {
+    let c = 4; // laxical scope
+    return function (b) { // Anonymus function
+        console.log(a + b + c);
+    }
+}
+let anonymasFunc = sum(2); // after first call value will not lost, keep retain is called closure
+anonymasFunc(5);
+
+// Example second
+const sum = function (a, b, c) {
+    return {
+        getSumTwo: function () {
+            return a + b;
+        },
+
+        getSumThree() {
+            return a + b + c;
+        }
+    }
+}
+
+const storeObj = sum(4, 3, 6);
+console.log(storeObj.getSumTwo());
+console.log(storeObj.getSumThree());
 
 /* ---------------------------------------------- Scope: --------------------------------------
 * Block scope - Variables declared inside a pair of curly braces cannot be accessed from outside.
@@ -404,67 +486,27 @@ let regex = /harrsdfgy/;
 // If we are using normal export then need to use {}, and using default export, don,t need  to use {}. 
 
 // ------------------------------ Bind(), call() and apply() -------------------------
-var pokemon = {
-    firstname: 'Pika',
-    lastname: 'Chu ',
-    getPokeName: function () {
-        var fullname = this.firstname + ' ' + this.lastname;
-        return fullname;
+const lufthansa = {
+    airline: 'lufthansa',
+    iatacode: 'LH',
+    booking: [],
+    book(flightNum, name) {
+        console.log(
+            `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
+        );
+        this.booking.push({flight: `${this.iatacode}${flightNum}`, name});
     }
 };
 
-var pokemonName = function () {
-    console.log(this.getPokeName() + 'I choose you!');
-};
-
-var logPokemon = pokemonName.bind(pokemon); // creates new object and binds pokemon. 'this' of pokemon === pokemonName now
-
-logPokemon(); // 'Pika Chu I choose you!'
-
-// Two ways to write function in object and toJSON custom method
-const person = {
-    name: 'vikash',
-    age: 22,
-    // toJSON: function() {
-    //     // first way 
-    //     return `${this.name} age ${this.age}`;
-    // },
-    toJSON() {
-        // second way
-        return `${this.name} age ${this.age}`;
-    }
+const errowings = {
+    airline: 'Errowings',
+    iatacode: 'EW',
+    booking: []
 }
 
-const dataObj = {
-    data: person
-}
+const bookFn = lufthansa.book;
 
-console.log(JSON.stringify(dataObj)); // first stringify() method looks for toJSON() inside object if it exists see result
-
-// this keyword, regular function and arrow function
-const jonas = {
-    firstName: 'vikash',
-    age: 1991,
-    calcAge: function () {
-        console.log(this);
-        console.log(2037 - this.year);
-    }
-}
-
-// Dom
-// contextmenu event
-$(window).contextmenu(function () {
-    console.log('right clicked');
-});
-
-// submit event on form
-$("#myForm").submit(function (event) { // support more than previous approach
-    event.preventDefault();
-    console.log(document.myForm);
-    console.log(event.target.elements.username.value);
-});
-
-
-// Execution contexts and call stack
-// Scope and scope chain
-// Hoisting 
+bookFn.call(lufthansa, 23, "Vikash");
+bookFn.apply(lufthansa, [23, "Sanu"]); // Apply method works same as call() but we have to pass rest argument as a array
+const bookFunc = bookFn.bind(errowings, 23); // Bind method - works same as call() but it will return same function with 'this' keyword
+bookFunc("Mayank");
