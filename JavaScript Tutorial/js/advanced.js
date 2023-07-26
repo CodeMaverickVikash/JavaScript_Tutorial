@@ -29,6 +29,26 @@ console.log({a, b}); // deleted from both
 const c = [...a];
 
 
+// JavaScript is synchronus or Asynchronus
+// JavaScript is single threaded or multi threaded
+
+// Basic: Everything in javascript happens inside as execution context
+// Ans: Javascript is synchronus single threaded language
+
+// Callstack - it only manages the execution context
+// Callstack - maintains the order of execution of execution context
+
+// callstack fancy name - 
+// 1) Execution context stack
+// 2) Control stack
+// 3) Machine stack
+// 4) Runtime stack
+// 5) Program stack
+
+
+// First class function
+
+
 
 
 
