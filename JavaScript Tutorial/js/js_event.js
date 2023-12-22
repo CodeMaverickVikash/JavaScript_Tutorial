@@ -1,42 +1,41 @@
 // --------------------------- Custom event ---------------------------
-const headerTag = document.getElementById('number');
+const headerTag = document.getElementById("number");
 
-headerTag.addEventListener('numberChanged', function (e) {
-    console.log(e);
-    headerTag.textContent = e.detail.number;
-    headerTag.style.color = e.detail.textColor;
+headerTag.addEventListener("numberChanged", function (e) {
+  console.log(e);
+  headerTag.textContent = e.detail.number;
+  headerTag.style.color = e.detail.textColor;
 });
 
 function changeNumber(n, c) {
-    const event = new CustomEvent('numberChanged', {
-        detail: {
-            number: n,
-            textColor: c
-        }
-    });
+  const event = new CustomEvent("numberChanged", {
+    detail: {
+      number: n,
+      textColor: c,
+    },
+  });
 
-    // call the event handler
-    headerTag.dispatchEvent(event);
+  // call the event handler
+  headerTag.dispatchEvent(event);
 }
 
 // --------------------------- Event object -----------------------------
 document.getElementById("heading").addEventListener("click", function (e) {
-    console.log(e);
-    // console.log("You have clicked the heading");
-    let variable;
-    // variable = e.target;
-    // variable = e.target.className;
-    // variable = Array.from(e.target.classList);
+  console.log(e);
+  // console.log("You have clicked the heading");
+  let variable;
+  // variable = e.target;
+  // variable = e.target.className;
+  // variable = Array.from(e.target.classList);
 
-    // variable = e.target.id;
-    // variable = e.offsetX;
-    // variable = e.offsetY;
-    // variable = e.clientX;
-    // variable = e.clientY;
-    console.log(variable);
-    // location.href = '//codewithharry.com'
+  // variable = e.target.id;
+  // variable = e.offsetX;
+  // variable = e.offsetY;
+  // variable = e.clientX;
+  // variable = e.clientY;
+  console.log(variable);
+  // location.href = '//codewithvikash.com'
 });
-
 
 // More on JavaScript Events
 // let btn = document.getElementById('btn');
@@ -73,7 +72,6 @@ document.getElementById("heading").addEventListener("click", function (e) {
 //     console.log('You triggered mouse move event')
 // })
 
-
 // Smart Page Crawler In JS
 // let str = "python";
 // let links = document.links;
@@ -92,43 +90,43 @@ document.getElementById("heading").addEventListener("click", function (e) {
 // ---------------------- Event bubbling and capturing ---------------------
 // Stop propagation, Immediate propagation and prevent default
 
-var div = document.querySelector('div');
-var button = document.querySelector('button');
+var div = document.querySelector("div");
+var button = document.querySelector("button");
 
-div.addEventListener('click', function () {
-    console.log('div');
+div.addEventListener("click", function () {
+  console.log("div");
 });
 
 // Button ka kam jo bhi honga use chala do, parent per jane ki jarurat nhi hai - e.stopPropagation() - don't propagate
-button.addEventListener('click', function (e) {
-    e.stopPropagation();
-    console.log('button');
+button.addEventListener("click", function (e) {
+  e.stopPropagation();
+  console.log("button");
 });
 // prevent default
-document.querySelector('a').addEventListener('click', function (e) {
-    e.preventDefault();
-    console.log('a');
+document.querySelector("a").addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("a");
 });
 
 console.log(document.documentElement);
 console.log(document.head);
 console.log(document.body);
 
-var h3Demo = document.querySelector('.demo');
-h3Demo.style.border = '2px solid red';
+var h3Demo = document.querySelector(".demo");
+h3Demo.style.border = "2px solid red";
 
-document.getElementsByClassName('demo'); // it will HTMLCollection
-document.querySelector('.demo');; // it will return first selected element 
+document.getElementsByClassName("demo"); // it will HTMLCollection
+document.querySelector(".demo"); // it will return first selected element
 
 // Creating element
-const domElement = document.createElement('div'); // createElement('tagName')
+const domElement = document.createElement("div"); // createElement('tagName')
 // domElement.innerText = 'Hello jorge!';
-domElement.textContent = 'Hello ranjha!';
-domElement.innerHTML = '<p>You are my love!</p><h3>Do not fall into it.</h3>';
-domElement.classList.add('demo');
-domElement.id = 'How';
+domElement.textContent = "Hello ranjha!";
+domElement.innerHTML = "<p>You are my love!</p><h3>Do not fall into it.</h3>";
+domElement.classList.add("demo");
+domElement.id = "How";
 // domElement.className = 'demo';
-console.log(domElement)
+console.log(domElement);
 
 // h3Demo.prepend(domElement);
 // h3Demo.append(domElement);
@@ -137,20 +135,20 @@ console.log(domElement)
 h3Demo.after(domElement);
 
 // Deleting element
-h3Demo.addEventListener('click', function () {
-    // this.remove();
-    this.parentElement.removeChild(this);
-    console.log(this);
+h3Demo.addEventListener("click", function () {
+  // this.remove();
+  this.parentElement.removeChild(this);
+  console.log(this);
 });
 
 // Attribute
-h3Demo.setAttribute('id', 'ok');
-console.log(h3Demo.getAttribute('id'));
+h3Demo.setAttribute("id", "ok");
+console.log(h3Demo.getAttribute("id"));
 console.log(h3Demo.id);
 
 // Classes
-h3Demo.classList.add('hum', 'you');
-h3Demo.classList.remove('hum', 'you');
+h3Demo.classList.add("hum", "you");
+h3Demo.classList.remove("hum", "you");
 // h3Demo.classList.toggle('hum');
 // h3Demo.classList.contains('hum');
 
@@ -159,12 +157,13 @@ h3Demo.classList.remove('hum', 'you');
 
 // --------------------------------------- contextmenu event -------------------------------------------
 $(window).contextmenu(function () {
-    console.log('right clicked');
+  console.log("right clicked");
 });
 
 // submit event on form
-$("#myForm").submit(function (event) { // support more than previous approach
-    event.preventDefault();
-    console.log(document.myForm);
-    console.log(event.target.elements.username.value);
+$("#myForm").submit(function (event) {
+  // support more than previous approach
+  event.preventDefault();
+  console.log(document.myForm);
+  console.log(event.target.elements.username.value);
 });

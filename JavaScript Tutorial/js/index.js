@@ -1,4 +1,4 @@
-// Whenever run javascript program global execution context is created. it has two component one is momory component also know as varibale env and code component. 
+// Whenever run javascript program global execution context is created. it has two component one is momory component also know as varibale env and code component.
 
 // --------------------------------------- console API ----------------------------------
 // console.time('your code took');
@@ -12,7 +12,7 @@
 // console.timeEnd('your code took');
 
 // var, let and const
-const vikash = 'Hello'; // no change, no redeclare
+const vikash = "Hello"; // no change, no redeclare
 
 // ------------------------------ Difference btw let and var -------------------------------
 // let	                                        |      var
@@ -20,25 +20,25 @@ const vikash = 'Hello'; // no change, no redeclare
 // let is block-scoped.	                        |   var is function scoped.
 // let does not allow to redeclare variables.   |   var allows to redeclare variables.
 // Hoisting does not occur in let.	            |   Hoisting occurs in var.
-// add itself into window object                | does not
+//  does not Add itself into window object      |   Add itself into window object
 
 let abc = function () {
-    for (var i = 0; i < 12; i++) {
-        console.log(i);
-    }
-    console.log(i); // ok
+  for (var i = 0; i < 12; i++) {
+    console.log(i);
+  }
+  console.log(i); // ok
 
-    for (let i = 0; i < 12; i++) {
-        console.log(i);
-    }
-    console.log(i); // not ok
-}
+  for (let i = 0; i < 12; i++) {
+    console.log(i);
+  }
+  console.log(i); // not ok
+};
 // abc();
 
 // case: 2
-let sanu = 'Hyy'; // no redeclare
+let sanu = "Hyy"; // no redeclare
 // let sanu = 'Hyy'; // Throw error
-var marks = '200'; // allow redeclare
+var marks = "200"; // allow redeclare
 // var marks = '300'; // no error
 
 // ------------------------------------------- Hoisting --------------------------------------
@@ -50,7 +50,7 @@ var x; // declarations
 // let x; // it will throw error
 // Important: JavaScript only hoists declarations, not initializations.
 var x = 5; // Initialize x
-// console.log(x + " " + y);  
+// console.log(x + " " + y);
 var y = 7; // Initialize y
 
 console.log(a);
@@ -63,7 +63,7 @@ var a = 8;
 // let b = 1; // it will throw error, doesn't support hoisting
 // const c = 3; // it will throw error, doesn't support hoisting
 function getName() {
-    console.log("Hosting: Vikash");
+  console.log("Hosting: Vikash");
 }
 // const getName = function() { // it will throw error
 //     console.log("Hosting: Vikash");
@@ -88,7 +88,6 @@ function getName() {
 // // 1. primitive datatype: undefined, null, Number, String, Boolean, Symbol
 // // 2. reference datatype: Array and Object
 
-
 // ------------------------ Loops in js - for, forEach, while, do-while, for-of, for-in ----------
 
 // ------------------------------ Regular and Arrow function --------------------------------------
@@ -96,42 +95,42 @@ function getName() {
 // one line will automatically return
 
 let greet = () => {
-    return "good morning";
-}
+  return "good morning";
+};
 greet = () => "Good Morning";
 greet = () => ({ name: "Vikash" });
 
 // Single parameters do not need parenthesis but you will have to put parenthesis if there are multiple paramteres
-greet = name => "Good Morning " + name + ending;
+greet = (name) => "Good Morning " + name + ending;
 
 // ---------------------------------------- Objects methods ---------------------------------------
 // JSON.stringify, JSON.parse
 var person = {
-    firstName: "John",
-    lastName: "Doe",
-    id: 5566,
-    fullName: function () {
-        return this.firstName + " " + this.lastName;
-    }
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
 };
 
 const jsObj = {
-    fname: "Vikash",
-    lname: "Maskhare",
-    que: "How are you?"
-}
+  fname: "Vikash",
+  lname: "Maskhare",
+  que: "How are you?",
+};
 
 const convertedIntoJson = JSON.stringify(jsObj);
-console.log(convertedIntoJson)
-console.log(typeof (convertedIntoJson));
+console.log(convertedIntoJson);
+console.log(typeof convertedIntoJson);
 
 const convertedIntoObject = JSON.parse(convertedIntoJson);
-console.log(convertedIntoObject)
-console.log(typeof (convertedIntoObject));
+console.log(convertedIntoObject);
+console.log(typeof convertedIntoObject);
 
 // ------------------------------------ Array methods ----------------------------------
 // indexOf, pop, join, push, shift, unshift, toString
-myarr = ["fan", 'camera', 23, null, true];
+myarr = ["fan", "camera", 23, null, true];
 // myarr.indexOf(23);
 // myarr.pop();
 // myarr.join(" * ");
@@ -176,7 +175,7 @@ window.mystring = "vikash is a good boy good";
 // console.warn(document.cookie);
 
 // ---------------------------------- Local Storage ---------------------------
-// To set data 
+// To set data
 localStorage.setItem("fname", "vikash");
 
 // To read data
@@ -190,7 +189,7 @@ localStorage.setItem("fname", "vikash");
 
 // -------------------------------------------- Session storage ------------------------------
 // To set data
-sessionStorage.setItem('nameKya', 'vikash');
+sessionStorage.setItem("nameKya", "vikash");
 
 // To get data
 // sessionStorage.getItem('nameKya');
@@ -218,16 +217,16 @@ let arr = [1, 2, 3];
 let [x, y, z] = arr; // array destructuring
 
 let obj = {
-    fname: "vikash",
-    lname: "maskhare",
-    phone: 293832738,
-    email: "viaksj@gmail.com"
-}
+  fname: "vikash",
+  lname: "maskhare",
+  phone: 293832738,
+  email: "viaksj@gmail.com",
+};
 
-let {fname, email} = obj; // you need to mentioned same name as mentioned in obj
+let { fname, email } = obj; // you need to mentioned same name as mentioned in obj
 // console.log(fname + " " + email);
 
-let {fname: first_name, lname: last_name} = obj; // with new variable
+let { fname: first_name, lname: last_name } = obj; // with new variable
 console.log(first_name, last_name);
 
 // -------------------------------------- Spread and rest operator on '...arr/obj' -------------------------------
@@ -237,13 +236,13 @@ let arr1 = [9, 8, 7];
 let arr2 = [1, 2, ...arr1]; // arr2 built with spread opt
 // console.log(arr2);
 
-// SPREAD, because on right side of = 
+// SPREAD, because on right side of =
 const arr3 = [1, 2, ...[3, 4, 5]];
-// REST, because on left side of = 
+// REST, because on left side of =
 const [a, , ...others] = [1, 2, 3, 4, 5];
 // console.log(a, others);
 
-let add = (...numbers)=> {}// packing in - rest opt 
+let add = (...numbers) => {}; // packing in - rest opt
 
 add(1, 2);
 // add(3, 4, 5);
@@ -257,7 +256,7 @@ add(...item); // packing out
 let g = 45;
 const val = g ?? 10;
 console.log(val);
- 
+
 // ------------------------------------- Optional chaining '?.' --------------------------------------
 // is a safe way to access nested object properties, even if an intermediate property doesn’t exist.
 // let data = {
@@ -280,46 +279,45 @@ console.log(val);
 // It's the enhanced version of obj, introduced in es6
 // Rules
 // 1) if key and value name is same then just write one
-id = 'Vikash';
+id = "Vikash";
 obj = {
-    // id: id // instead
-    id
-}
+  // id: id // instead
+  id,
+};
 
 // 2) computatuon on property or value of obj
 obj = {
-    [id+2]: [id + " " + "Maskhare"]
-}
+  [id + 2]: [id + " " + "Maskhare"],
+};
 
 // 3) new function syntax
 obj = {
-    // show: function() {  } // instead
-    show() {  }
-}
+  // show: function() {  } // instead
+  show() {},
+};
 
 // ------------------------------- Template literal - backtick/backquote -----------------------------
-const greeting = 'Hello';
-const name = 'Vikash';
+const greeting = "Hello";
+const name = "Vikash";
 const userMsg = `${greeting}, ${name}`; // template literal
-
 
 // Imediately invoked function expression - it will call once, we can't reuse it
 (function () {
-    console.log("This will never run again.");
+  console.log("This will never run again.");
 })();
 
 // In arrow function
 (() => {
-    console.log("This will ALSO never run again.");
+  console.log("This will ALSO never run again.");
 })();
 
 // LifeCycle DOM event
-document.addEventListener('DOMContentLoaded', function(e) {
-    console.log('HTML parsed and DOM tree built!', e);
+document.addEventListener("DOMContentLoaded", function (e) {
+  console.log("HTML parsed and DOM tree built!", e);
 });
 
-window.addEventListener('load', function(e) {
-    console.log('Page fully loaded', e);
+window.addEventListener("load", function (e) {
+  console.log("Page fully loaded", e);
 });
 
 // -------------------------------------------- Promise --------------------------------------
@@ -333,23 +331,23 @@ resolve()  reject()
 then()           catch()         ---------Both are callback function */
 
 function fetchUser() {
-    return new Promise(function (resolve, reject) {
-        console.log('Fetching data, please wait.'); // it is in pending state
-        $.get('https://jsonplaceholder.typicode.com/users', function (data) {
-            resolve(data);
-        }).fail((err) => {
-            reject('Failed to load json data.');
-        })
+  return new Promise(function (resolve, reject) {
+    console.log("Fetching data, please wait."); // it is in pending state
+    $.get("https://jsonplaceholder.typicode.com/users", function (data) {
+      resolve(data);
+    }).fail((err) => {
+      reject("Failed to load json data.");
     });
+  });
 }
 
-fetchUser().then(function (result) {
+fetchUser()
+  .then(function (result) {
     console.log(result);
-}).catch(function (error) {
+  })
+  .catch(function (error) {
     console.log(error);
-});
-
-
+  });
 
 // --------------------------------------- Async js programming -------------------------------------
 // Callbacks, promises, async & await
@@ -358,55 +356,60 @@ fetchUser().then(function (result) {
 
 // Promise
 function fetchUserData() {
-    fetch('https://jsonplaceholder.typicode.com/users').then(resp => resp.json()).then(jsonData => {
-        console.log({ jsonData });
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((resp) => resp.json())
+    .then((jsonData) => {
+      console.log({ jsonData });
     });
-    // .then() method se jo bhi return hota hai wo promise hota hai
-    let jsonDataWithPromise = fetch('https://jsonplaceholder.typicode.com/users').then(resp => resp.json()).then(jsonData => jsonData);
-    console.log({ jsonDataWithPromise });
+  // .then() method se jo bhi return hota hai wo promise hota hai
+  let jsonDataWithPromise = fetch("https://jsonplaceholder.typicode.com/users")
+    .then((resp) => resp.json())
+    .then((jsonData) => jsonData);
+  console.log({ jsonDataWithPromise });
 }
 
 // --------------------------------------------- async and await --------------------------------
 // Async & Await - it works only with promise
 async function fetchUserData() {
-    let resp = await fetch('https://jsonplaceholder.typicode.com/users'); // The keyword await makes JavaScript wait until that promise settles and returns its result.
-    let jsonData = await resp.json();
-    console.log(jsonData);
+  let resp = await fetch("https://jsonplaceholder.typicode.com/users"); // The keyword await makes JavaScript wait until that promise settles and returns its result.
+  let jsonData = await resp.json();
+  console.log(jsonData);
 }
 
 // ------------------------------ Closure - function ke ander function ------------------------------
 // ------------------------------ Anonymus function - Which doesn't have name. ----------------------
 function sum(a) {
-    let c = 4; // laxical scope
-    return function (b) { // Anonymus function
-        console.log(a + b + c);
-    }
+  let c = 4; // laxical scope
+  return function (b) {
+    // Anonymus function
+    console.log(a + b + c);
+  };
 }
 let anonymasFunc = sum(2); // after first call value will not lost, keep retain is called closure
 anonymasFunc(5);
 
 // Example second
 const sum = function (a, b, c) {
-    return {
-        getSumTwo: function () {
-            return a + b;
-        },
+  return {
+    getSumTwo: function () {
+      return a + b;
+    },
 
-        getSumThree() {
-            return a + b + c;
-        }
-    }
-}
+    getSumThree() {
+      return a + b + c;
+    },
+  };
+};
 
 const storeObj = sum(4, 3, 6);
 console.log(storeObj.getSumTwo());
 console.log(storeObj.getSumThree());
 
 /* ---------------------------------------------- Scope: --------------------------------------
-* Block scope - Variables declared inside a pair of curly braces cannot be accessed from outside.
-* Function scope - Variables declared inside a function connot be accessed from outside the function.
-* Global scope - Gloabally scoped variable can be accessed inside a block or function.
-*/
+ * Block scope - Variables declared inside a pair of curly braces cannot be accessed from outside.
+ * Function scope - Variables declared inside a function connot be accessed from outside the function.
+ * Global scope - Gloabally scoped variable can be accessed inside a block or function.
+ */
 
 // --------------------------------------------- Ternary operator -----------------------------
 // Sometimes, we need to assign a variable depending on a condition. that time we use conditional(Ternary) operator (?)
@@ -469,7 +472,7 @@ let regex = /harrsdfgy/;
 // regex = /ha?rryi?t/; //? after character means that character is optional
 // regex = /h\*rry/; // '\' to escape the metachar, metachar will be as a normal string
 
-// let str = "h*rry means codewith"; // 
+// let str = "h*rry means codewith"; //
 
 // let result = regex.exec(str);
 // console.log("The result from exec is ", result);
@@ -483,26 +486,26 @@ let regex = /harrsdfgy/;
 
 // JavaScript Modules
 // JavaScript modules allow you to break up your code into multiple files. : means - import and export
-// If we are using normal export then need to use {}, and using default export, don,t need  to use {}. 
+// If we are using normal export then need to use {}, and using default export, don,t need  to use {}.
 
 // ------------------------------ Bind(), call() and apply() -------------------------
 const lufthansa = {
-    airline: 'lufthansa',
-    iatacode: 'LH',
-    booking: [],
-    book(flightNum, name) {
-        console.log(
-            `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
-        );
-        this.booking.push({flight: `${this.iatacode}${flightNum}`, name});
-    }
+  airline: "lufthansa",
+  iatacode: "LH",
+  booking: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
+    );
+    this.booking.push({ flight: `${this.iatacode}${flightNum}`, name });
+  },
 };
 
 const errowings = {
-    airline: 'Errowings',
-    iatacode: 'EW',
-    booking: []
-}
+  airline: "Errowings",
+  iatacode: "EW",
+  booking: [],
+};
 
 const bookFn = lufthansa.book;
 

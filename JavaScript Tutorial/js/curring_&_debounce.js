@@ -1,9 +1,9 @@
 // Higher order function
-// forEach 
-// filter 
-// map 
-// sort 
+// filter
+// map
 // reduce
+// sort
+// forEach
 
 // undefined vs not defined
 // undefined - Exists in memory but with undefinded
@@ -14,11 +14,11 @@
 
 // Curring in javascript
 function addition(a) {
-    return function (b) {
-        return function (c) {
-            return a + b + c;
-        }
-    }
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
 }
 
 // var result = addition(3);
@@ -31,10 +31,10 @@ console.log(res);
 
 // Infinite curring
 function add(a) {
-    return function (b) {
-        if (b) return add(a + b);
-        return a;
-    }
+  return function (b) {
+    if (b) return add(a + b);
+    return a;
+  };
 }
 
 console.log(add(2)(5)(8)(3)());
@@ -42,19 +42,19 @@ console.log(add(2)(5)(8)(3)());
 // Debouncing
 let count = 0;
 function getData() {
-    console.log('Fetching data', count++);
+  console.log("Fetching data", count++);
 }
 
 function myDebounce(callback, t) {
-    return function () {
-        if (t) clearTimeout(t);
-        setTimeout(() => {
-            getData();
-        }, t);
-    }
+  return function () {
+    if (t) clearTimeout(t);
+    setTimeout(() => {
+      getData();
+    }, t);
+  };
 }
 
-const betterFunc = myDebounce(getData, 1000)
+const betterFunc = myDebounce(getData, 1000);
 
 // Throttling same as debouncing
 
@@ -85,16 +85,16 @@ const betterFunc = myDebounce(getData, 1000)
 // console.log(h1.parentElement.children);
 
 // Lifecycle DOM events
-document.addEventListener('DOMContentLoaded', function (e) {
-    console.log('HTML parsed and DOM tree built!!', e)
+document.addEventListener("DOMContentLoaded", function (e) {
+  console.log("HTML parsed and DOM tree built!!", e);
 });
 
-window.addEventListener('load', function (e) {
-    console.log('Page fully loaded!!', e)
+window.addEventListener("load", function (e) {
+  console.log("Page fully loaded!!", e);
 });
 
-        // window.addEventListener('beforeunload', function(e) {
-        //     e.preventDefault();
-        //     console.log(e);
-        //     e.returnValue = '';
-        // });
+// window.addEventListener('beforeunload', function(e) {
+//     e.preventDefault();
+//     console.log(e);
+//     e.returnValue = '';
+// });

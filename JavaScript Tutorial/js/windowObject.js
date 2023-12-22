@@ -26,6 +26,6 @@ a = document.all;
 // a = document.links;
 // a = document.links[0];
 // a = document.links[0].href;
-// use document.images and document.scripts and print the list 
+// use document.images and document.scripts and print the list
 // of images and scripts on an html page
 console.log(a);
