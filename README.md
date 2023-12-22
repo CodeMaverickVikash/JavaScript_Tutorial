@@ -140,6 +140,6 @@
     - The context in which variables are declared and can be accessed.
 
 39. **Closures:**
-   - Understanding closures and lexical scope.
-   - Creating closures for data encapsulation and private variables.
-   - Functions that have access to variables from their outer scope.
+    - Understanding closures and lexical scope.
+    - Creating closures for data encapsulation and private variables.
+    - Functions that have access to variables from their outer scope.
