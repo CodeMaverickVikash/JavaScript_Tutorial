@@ -1,0 +1,14 @@
+{
+  "name": "javascript_tutorial",
+  "version": "1.0.0",
+  "description": "1. **Variables and Data Types:**\r    - Declaring variables with `var`, `let`, or `const`.\r    - Data types include numbers, strings, booleans, objects, arrays, and symbols.",
+  "main": "practice.js",
+  "scripts": {
+    "config": "eslint --init"
+  },
+  "author": "vikash",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  }
+}

@@ -377,7 +377,7 @@ async function fetchUserData() {
 }
 
 // ------------------------------ Closure - function ke ander function ------------------------------
-// ------------------------------ Anonymus function - Which doesn't have name. ----------------------
+// Anonymus function - Which doesn't have name.
 function sum(a) {
   let c = 4; // laxical scope
   return function (b) {
