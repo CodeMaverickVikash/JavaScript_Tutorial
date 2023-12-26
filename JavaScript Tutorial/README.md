@@ -69,12 +69,3 @@ The Lexical Environment involves the association between identifiers (variables 
 - **Stack Memory:** Used for storing function call information, local variables, and control flow. It follows the Last In, First Out (LIFO) principle.
   
 - **Heap Memory:** Used for dynamic memory allocation, especially for objects created during runtime. Unlike the stack, heap memory does not have a specific order for allocating and deallocating memory.
-
-## Copy and Reference
-
-- **Copy:** When primitive data types (e.g., numbers or strings) are assigned to variables, the actual value is copied to the new variable. Changes in one variable do not affect the other.
-
-  ```javascript
-  let a = 10;
-  let b = a; // Copy
-  b = 20;   // Changes in 'b' do not affect 'a'
