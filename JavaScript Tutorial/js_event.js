@@ -21,8 +21,6 @@ function changeNumber(n, c) {
 
 // --------------------------- Event object -----------------------------
 document.getElementById("heading").addEventListener("click", function (e) {
-  console.log(e);
-  // console.log("You have clicked the heading");
   let variable;
   // variable = e.target;
   // variable = e.target.className;
@@ -34,58 +32,30 @@ document.getElementById("heading").addEventListener("click", function (e) {
   // variable = e.clientX;
   // variable = e.clientY;
   console.log(variable);
-  // location.href = '//codewithvikash.com'
 });
 
-// More on JavaScript Events
-// let btn = document.getElementById('btn');
-// btn.addEventListener('click', func1);
-// btn.addEventListener('dblclick', func2);
-// btn.addEventListener('mousedown', func3);
+// ----------------------------------- bind Events on element ------------------------------------
+// Events - click, dblclick, mousedown
+let btn = document.getElementById("btn");
+btn.addEventListener("click", callback);
+btn.addEventListener("dblclick", callback);
+btn.addEventListener("mousedown", callback);
 
-// function func1(e) {
-//     console.log("Thanks", e);
-//     e.preventDefault(); // it prevent from going another page
-// }
+const noElem = document.querySelector(".no");
+noElem.addEventListener("mouseenter", callback);
+noElem.addEventListener("mouseleave", callback);
 
-// function func2(e) {
-//     console.log("Thanks its a double click", e);
-//     e.preventDefault();
-// }
+function callback(e) {
+  console.log("Thanks", e);
+  e.preventDefault(); // it prevent from going another page
+}
 
-// function func3(e) {
-//     console.log("Thanks its a mouse down ", e);
-//     e.preventDefault();
-// }
-
-// document.querySelector('.no').addEventListener('mouseenter', function(){
-//     console.log('You entered no')
-// })
-
-// document.querySelector('.no').addEventListener('mouseleave', function(){
-//     console.log('You exited no')
-// })
-
-// document.querySelector('.container').addEventListener('mousemove', function (e) {
-//     console.log(e.offsetX, e.offsetY);
-//     document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX},154)`;
-//     console.log('You triggered mouse move event')
-// })
-
-// Smart Page Crawler In JS
-// let str = "python";
-// let links = document.links;
-// // console.log(links);
-// let href;
-// Array.from(links).forEach(function (element) {
-//     href = element.href;
-//     if (href.includes(str)) {
-//         console.log(href);
-//     }
-//     else{
-//         console.log("hum");
-//     }
-// });
+const containerElem = document.querySelector(".container");
+containerElem.addEventListener("mousemove", function (e) {
+  console.log(e.offsetX, e.offsetY);
+  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetX},154)`;
+  console.log("You triggered mouse move event");
+});
 
 // ---------------------- Event bubbling and capturing ---------------------
 // Stop propagation, Immediate propagation and prevent default
@@ -156,14 +126,22 @@ h3Demo.classList.remove("hum", "you");
 // h3Demo.className = 'Jonas';
 
 // --------------------------------------- contextmenu event -------------------------------------------
-$(window).contextmenu(function () {
-  console.log("right clicked");
-});
+window.addEventListener("contextmenu", (e) => console.log("Right clicked"));
 
 // submit event on form
-$("#myForm").submit(function (event) {
+const form = document.querySelector("#myForm");
+form.addEventListener("submit", function (event) {
   // support more than previous approach
   event.preventDefault();
   console.log(document.myForm);
   console.log(event.target.elements.username.value);
+});
+
+// -------------------------------------- LifeCycle DOM event -----------------------------------------
+document.addEventListener("DOMContentLoaded", function (e) {
+  console.log("HTML parsed and DOM tree built!", e);
+});
+
+window.addEventListener("load", function (e) {
+  console.log("Page fully loaded", e);
 });

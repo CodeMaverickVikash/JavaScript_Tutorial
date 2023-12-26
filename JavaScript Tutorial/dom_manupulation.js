@@ -7,7 +7,7 @@
     */
 
 // 1. Single element selector
-let element = document.getElementById('myfirst');
+let element = document.getElementById("myfirst");
 // element = element.className;
 // element = element.childNodes;
 // element = element.parentNode;
@@ -17,7 +17,6 @@ let element = document.getElementById('myfirst');
 // element = element.innerText;
 // console.log(element);
 
-
 // let sel = document.querySelector('#myfirst');
 // sel = document.querySelector('.child');
 // sel = document.querySelector('div');
@@ -25,7 +24,7 @@ let element = document.getElementById('myfirst');
 // console.log(sel)
 
 // 2. Multi element selector
-let elems = document.getElementsByClassName('child');
+let elems = document.getElementsByClassName("child");
 // elems = document.getElementsByClassName('container');
 // elems = document.getElementsByTagName('div');
 // console.log(elems)
@@ -37,16 +36,15 @@ let elems = document.getElementsByClassName('child');
 // }
 // Array.from(elems).forEach(element => {
 //     console.log(element);
-//    element.style.color = 'blue'; 
+//    element.style.color = 'blue';
 // });
 // console.log(elems[0].getElementsByClassName('child'))
 
-
 // Creating, Removing & Replacing Elements
-console.log('Creating, Removing & Replacing Elements');
+console.log("Creating, Removing & Replacing Elements");
 // let element = document.createElement('li');
-let text = document.createTextNode('I am a text node');
-element.appendChild(text)
+let text = document.createTextNode("I am a text node");
+element.appendChild(text);
 
 // Add a class name to the li element
 // element.className = 'childul';
@@ -76,10 +74,10 @@ element.appendChild(text)
 // console.log(elem2, pr);
 
 // --------------------------------- Traversing ----------------------------
-console.log('Welcome to tutorial 15');
+console.log("Welcome to tutorial 15");
 
-let cont = document.querySelector('.no');
-cont = document.querySelector('.container');
+let cont = document.querySelector(".no");
+cont = document.querySelector(".container");
 let nodeName = cont.childNodes[1].nodeName;
 let nodeType = cont.childNodes[1].nodeType;
 // console.log(nodeName)
@@ -95,7 +93,7 @@ let nodeType = cont.childNodes[1].nodeType;
 // console.log(cont.childNodes);
 // console.log(cont.children);
 
-let container = document.querySelector('div.container');
+let container = document.querySelector("div.container");
 
 // console.log(container.children[1].children[0].children);
 
@@ -112,36 +110,35 @@ console.log(container.firstElementChild.nextSibling);
 console.log(container.firstElementChild.nextElementSibling);
 console.log(container.firstElementChild.nextElementSibling.nextElementSibling);
 
-
 // ------------------- Creating, Removing & Replacing Elements ---------------
-console.log('this is tut 16');
-let element2 = document.createElement('li');
-let text2 = document.createTextNode('I am a text node');
-element2.appendChild(text2)
+console.log("this is tut 16");
+let element2 = document.createElement("li");
+let text2 = document.createTextNode("I am a text node");
+element2.appendChild(text2);
 
 // Add a class name to the li element2
-element2.className = 'childul';
-element2.id = 'createdLi';
-element2.setAttribute('title', 'mytitle');
+element2.className = "childul";
+element2.id = "createdLi";
+element2.setAttribute("title", "mytitle");
 // element2.innerText = '<b>Hello this is created by harry</b>';
 // element2.innerHTML = '<b>Hello this is created by harry</b>';
 
-let ul = document.querySelector('ul.this');
+let ul = document.querySelector("ul.this");
 ul.appendChild(element2);
 // console.log(ul)
 // console.log(element2)
 
-let elem2 = document.createElement('h3');
-elem2.id = 'elem2';
-elem2.className = 'elem2';
-let tnode = document.createTextNode('This is a created node for elem2');
+let elem2 = document.createElement("h3");
+elem2.id = "elem2";
+elem2.className = "elem2";
+let tnode = document.createTextNode("This is a created node for elem2");
 elem2.appendChild(tnode);
 
 element2.replaceWith(elem2);
-let myul = document.getElementById('myul');
-myul.replaceChild(element2, document.getElementById('fui'));
-myul.removeChild(document.getElementById('lui'));
-let pr = elem2.hasAttribute('href');
-elem2.removeAttribute('id');
-elem2.setAttribute('title', 'myelem2title');
+let myul = document.getElementById("myul");
+myul.replaceChild(element2, document.getElementById("fui"));
+myul.removeChild(document.getElementById("lui"));
+let pr = elem2.hasAttribute("href");
+elem2.removeAttribute("id");
+elem2.setAttribute("title", "myelem2title");
 console.log(elem2, pr);

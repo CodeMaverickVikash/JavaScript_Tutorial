@@ -1,5 +1,3 @@
-// Whenever run javascript program global execution context is created. it has two component one is momory component also know as varibale env and code component.
-
 // --------------------------------------- console API ----------------------------------
 // console.time('your code took');
 // console.log('hello console');
@@ -157,49 +155,6 @@ window.mystring = "vikash is a good boy good";
 // console.log(mydate.getMinutes());
 // console.log(mydate.getHours());
 
-// ----------------------------- DOM MANUPILATION: document object model ----------------------
-// let elem= document.getElementById('click');
-// console.log(elem);
-
-// let elemclass= document.getElementsByClassName('container');
-// console.log(elemclass);
-// // elemclass[0].style.background= "yellow";
-// elemclass[0].classList.add("bg-primary");
-// elemclass[0].classList.add("text-success");
-
-// ------------------------------------------- Cookies -----------------------------------
-// to set cookie
-// document.cookie= "username=vikash";
-
-// to access cookie in string format
-// console.warn(document.cookie);
-
-// ---------------------------------- Local Storage ---------------------------
-// To set data
-localStorage.setItem("fname", "vikash");
-
-// To read data
-// localStorage.getItem('fname');
-
-// To remove data
-// localStorage.removeItem('fname');
-
-// To clear localstorage
-// localStorage.clear();
-
-// -------------------------------------------- Session storage ------------------------------
-// To set data
-sessionStorage.setItem("nameKya", "vikash");
-
-// To get data
-// sessionStorage.getItem('nameKya');
-
-// To remove data
-// sessionStorage.removeItem('nameKya');
-
-// To clear sessionStorage
-// sessionStorage.clear();
-
 // ---------------------------------- Truthy and falsy values --------------------------------
 
 // We have 5 falsy values: 0, '', undefined, null, NaN
@@ -214,7 +169,7 @@ sessionStorage.setItem("nameKya", "vikash");
 
 // --------------------------- Destructuring array and object ----------------------------------------
 let arr = [1, 2, 3];
-let [x, y, z] = arr; // array destructuring
+let [x2, y2, z] = arr; // array destructuring
 
 let obj = {
   fname: "vikash",
@@ -239,7 +194,7 @@ let arr2 = [1, 2, ...arr1]; // arr2 built with spread opt
 // SPREAD, because on right side of =
 const arr3 = [1, 2, ...[3, 4, 5]];
 // REST, because on left side of =
-const [a, , ...others] = [1, 2, 3, 4, 5];
+const [a1, , ...others] = [1, 2, 3, 4, 5];
 // console.log(a, others);
 
 let add = (...numbers) => {}; // packing in - rest opt
@@ -311,71 +266,6 @@ const userMsg = `${greeting}, ${name}`; // template literal
   console.log("This will ALSO never run again.");
 })();
 
-// LifeCycle DOM event
-document.addEventListener("DOMContentLoaded", function (e) {
-  console.log("HTML parsed and DOM tree built!", e);
-});
-
-window.addEventListener("load", function (e) {
-  console.log("Page fully loaded", e);
-});
-
-// -------------------------------------------- Promise --------------------------------------
-// Promises - Promises are used to handle asynchronous operations in JavaScript. - it has three stages 1) Pending 2) Fullfilled 3) Rejected
-/* Promise()         ------- it will take condition
-   /     \
-  /       \
-resolve()  reject()
-/           \
-/              \
-then()           catch()         ---------Both are callback function */
-
-function fetchUser() {
-  return new Promise(function (resolve, reject) {
-    console.log("Fetching data, please wait."); // it is in pending state
-    $.get("https://jsonplaceholder.typicode.com/users", function (data) {
-      resolve(data);
-    }).fail((err) => {
-      reject("Failed to load json data.");
-    });
-  });
-}
-
-fetchUser()
-  .then(function (result) {
-    console.log(result);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-// --------------------------------------- Async js programming -------------------------------------
-// Callbacks, promises, async & await
-// Asynchronus - Sequence not defined
-// Synchronus - Sequence decided
-
-// Promise
-function fetchUserData() {
-  fetch("https://jsonplaceholder.typicode.com/users")
-    .then((resp) => resp.json())
-    .then((jsonData) => {
-      console.log({ jsonData });
-    });
-  // .then() method se jo bhi return hota hai wo promise hota hai
-  let jsonDataWithPromise = fetch("https://jsonplaceholder.typicode.com/users")
-    .then((resp) => resp.json())
-    .then((jsonData) => jsonData);
-  console.log({ jsonDataWithPromise });
-}
-
-// --------------------------------------------- async and await --------------------------------
-// Async & Await - it works only with promise
-async function fetchUserData() {
-  let resp = await fetch("https://jsonplaceholder.typicode.com/users"); // The keyword await makes JavaScript wait until that promise settles and returns its result.
-  let jsonData = await resp.json();
-  console.log(jsonData);
-}
-
 // ------------------------------ Closure - function ke ander function ------------------------------
 // Anonymus function - Which doesn't have name.
 function sum(a) {
@@ -389,7 +279,7 @@ let anonymasFunc = sum(2); // after first call value will not lost, keep retain 
 anonymasFunc(5);
 
 // Example second
-const sum = function (a, b, c) {
+const addParams = function (a, b, c) {
   return {
     getSumTwo: function () {
       return a + b;
@@ -401,7 +291,7 @@ const sum = function (a, b, c) {
   };
 };
 
-const storeObj = sum(4, 3, 6);
+const storeObj = addParams(4, 3, 6);
 console.log(storeObj.getSumTwo());
 console.log(storeObj.getSumThree());
 
@@ -455,34 +345,6 @@ console.log(storeObj.getSumThree());
 
 // let user = {}; // user has no address
 // console.log( user?.address?.street ); // undefined (no error)
-
-// ----------------------------------------- Regular expression ----------------------------------
-// let str = 'vikash is a something';
-// var reg = /vikash/; // we always write regEx btw / and /
-
-// reg.exec(str) ? console.log('found'): console.log('Not found');
-
-// Metacharacter
-let regex = /harrsdfgy/;
-// Lets look into some metacharacter symbols
-// regex = /^harrdc/; // ^ means expression will match if string starts with
-// regex = /harry$/; // $ at the end of the string means "string ends with"
-// regex = /h.rry/; //matches any one character
-// regex = /h*rry/; //matches any 0 or more characters
-// regex = /ha?rryi?t/; //? after character means that character is optional
-// regex = /h\*rry/; // '\' to escape the metachar, metachar will be as a normal string
-
-// let str = "h*rry means codewith"; //
-
-// let result = regex.exec(str);
-// console.log("The result from exec is ", result);
-
-// if(regex.test(str)){
-//     console.log(`The string ${str} matches the expression ${regex.source}`);
-// }
-// else{
-//     console.log(`The string ${str} does not match the expression ${regex.source}`);
-// }
 
 // JavaScript Modules
 // JavaScript modules allow you to break up your code into multiple files. : means - import and export

@@ -1,4 +1,4 @@
-// Higher order function
+// Higher order function - Function which operates on anotther function by taking fn as argument or by returning fn.
 // filter
 // map
 // reduce
