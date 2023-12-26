@@ -143,3 +143,5 @@
     - Understanding closures and lexical scope.
     - Creating closures for data encapsulation and private variables.
     - Functions that have access to variables from their outer scope.
+   
+40. **Copy and Reference:**
