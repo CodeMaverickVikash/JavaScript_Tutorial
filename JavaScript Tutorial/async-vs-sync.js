@@ -1,13 +1,13 @@
 /*
- * Callbacks - get call when something heppen
+ * Callbacks - get call when something happen
  * promises - used to handle async task (which may take time to complete)
- * async & await -used to make synchronus
- * Asynchronus - Sequence not defined
- * Synchronus - Sequence decided
+ * async & await -used to make synchronous
+ * Asynchronous - Sequence not defined
+ * Synchronous - Sequence decided
  */
 
 // -------------------------------------------- Promise --------------------------------------
-// Promises - Promises are used to handle asynchronous operations in JavaScript. - it has three stages 1) Pending 2) Fullfilled 3) Rejected
+// Promises - Promises are used to handle asynchronous operations in JavaScript. - it has three stages 1) Pending 2) Fulfilled 3) Rejected
 /* Promise()         ------- it will take condition
    /     \
   /       \

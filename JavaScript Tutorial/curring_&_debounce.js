@@ -1,4 +1,4 @@
-// Higher order function - Function which operates on anotther function by taking fn as argument or by returning fn.
+// Higher order function - Function which operates on another function by taking fn as argument or by returning fn.
 // filter
 // map
 // reduce
@@ -6,8 +6,8 @@
 // forEach
 
 // undefined vs not defined
-// undefined - Exists in memory but with undefinded
-// not definded - Doesn't exists in memory
+// undefined - Exists in memory but with undefined
+// not defined - Doesn't exists in memory
 
 // Before execution js engine gives some space in memory - Global execution context - Key and value form + predefined func or something
 // Function from global context, it goes into call stack

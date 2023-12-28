@@ -6,7 +6,7 @@
 // console.warn(document.cookie);
 
 // ---------------------------------- Local Storage ---------------------------
-// * localStorage has no exipiry date it will be always
+// * localStorage has no expiry date it will be always
 
 // To set data
 localStorage.setItem("fname", "vikash");
@@ -21,7 +21,7 @@ localStorage.setItem("fname", "vikash");
 // localStorage.clear();
 
 // -------------------------------------------- Session storage ------------------------------
-// * sessionStorage has expiry date it will be destroy after closeing browser
+// * sessionStorage has expiry date it will be destroy after closing browser
 // To set data
 sessionStorage.setItem("nameKya", "vikash");
 

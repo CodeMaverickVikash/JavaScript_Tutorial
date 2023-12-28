@@ -41,13 +41,13 @@ var marks = "200"; // allow redeclare
 
 // ------------------------------------------- Hoisting --------------------------------------
 // Hoisting is JavaScript's default behavior of moving declarations to the top.
-// Hoisting are two types varibale hoisting and function hoisting
+// Hoisting are two types variable hoisting and function hoisting
 x = 5; // assign
 // console.log(x);
 var x; // declarations
 // let x; // it will throw error
 // Important: JavaScript only hoists declarations, not initializations.
-var x = 5; // Initialize x
+var x5 = 5; // Initialize x
 // console.log(x + " " + y);
 var y = 7; // Initialize y
 
@@ -98,8 +98,8 @@ let greet = () => {
 greet = () => "Good Morning";
 greet = () => ({ name: "Vikash" });
 
-// Single parameters do not need parenthesis but you will have to put parenthesis if there are multiple paramteres
-greet = (name) => "Good Morning " + name + ending;
+// Single parameters do not need parenthesis but you will have to put parenthesis if there are multiple parameters
+greet = (name) => "Good Morning " + name;
 
 // ---------------------------------------- Objects methods ---------------------------------------
 // JSON.stringify, JSON.parse
@@ -128,7 +128,7 @@ console.log(typeof convertedIntoObject);
 
 // ------------------------------------ Array methods ----------------------------------
 // indexOf, pop, join, push, shift, unshift, toString
-myarr = ["fan", "camera", 23, null, true];
+var myarr = ["fan", "camera", 23, null, true];
 // myarr.indexOf(23);
 // myarr.pop();
 // myarr.join(" * ");
@@ -160,11 +160,11 @@ window.mystring = "vikash is a good boy good";
 // We have 5 falsy values: 0, '', undefined, null, NaN
 // console.log(Boolean(0));
 // console.log(Boolean(undefined));
-// console.log(Boolean('Jonus'));
+// console.log(Boolean('Vikash'));
 // console.log(Boolean({}));
 // console.log(Boolean(''));
 
-// let height; // it's a declaration, not defination
+// let height; // it's a declaration, not definition
 // (height) ? console.log("YAY, Height is defined") : console.log("Undefined");
 
 // --------------------------- Destructuring array and object ----------------------------------------
@@ -234,13 +234,13 @@ console.log(val);
 // It's the enhanced version of obj, introduced in es6
 // Rules
 // 1) if key and value name is same then just write one
-id = "Vikash";
+let id = "Vikash";
 obj = {
   // id: id // instead
   id,
 };
 
-// 2) computatuon on property or value of obj
+// 2) computation on property or value of obj
 obj = {
   [id + 2]: [id + " " + "Maskhare"],
 };
@@ -256,7 +256,7 @@ const greeting = "Hello";
 const name = "Vikash";
 const userMsg = `${greeting}, ${name}`; // template literal
 
-// Imediately invoked function expression - it will call once, we can't reuse it
+// Immediately invoked function expression - it will call once, we can't reuse it
 (function () {
   console.log("This will never run again.");
 })();
@@ -267,16 +267,16 @@ const userMsg = `${greeting}, ${name}`; // template literal
 })();
 
 // ------------------------------ Closure - function ke ander function ------------------------------
-// Anonymus function - Which doesn't have name.
+// Anonymous function - Which doesn't have name.
 function sum(a) {
-  let c = 4; // laxical scope
+  let c = 4; // lexical scope
   return function (b) {
     // Anonymus function
     console.log(a + b + c);
   };
 }
-let anonymasFunc = sum(2); // after first call value will not lost, keep retain is called closure
-anonymasFunc(5);
+let anonymousFunc = sum(2); // after first call value will not lost, keep retain is called closure
+anonymousFunc(5);
 
 // Example second
 const addParams = function (a, b, c) {
@@ -297,8 +297,8 @@ console.log(storeObj.getSumThree());
 
 /* ---------------------------------------------- Scope: --------------------------------------
  * Block scope - Variables declared inside a pair of curly braces cannot be accessed from outside.
- * Function scope - Variables declared inside a function connot be accessed from outside the function.
- * Global scope - Gloabally scoped variable can be accessed inside a block or function.
+ * Function scope - Variables declared inside a function cannot be accessed from outside the function.
+ * Global scope - Globally scoped variable can be accessed inside a block or function.
  */
 
 // --------------------------------------------- Ternary operator -----------------------------

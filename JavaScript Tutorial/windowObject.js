@@ -1,6 +1,6 @@
 // Useful window method: alert, confirm, prompt, document, innerHeight, innerWidth, scrollX, scrollY, location, history
 
-window; // windows object is globel in js
+window; // windows object is global in js
 
 window.alert("This is vikash"); // can be written like this
 alert("This is vikash"); // also can be written like this

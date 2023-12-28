@@ -4,9 +4,9 @@
 
 // reg.exec(str) ? console.log('found'): console.log('Not found');
 
-// Metacharacter
+// Metacharacters
 let regex = /harrsdfgy/;
-// Lets look into some metacharacter symbols
+// Lets look into some Metacharacters symbols
 // regex = /^harrdc/; // ^ means expression will match if string starts with
 // regex = /harry$/; // $ at the end of the string means "string ends with"
 // regex = /h.rry/; //matches any one character
