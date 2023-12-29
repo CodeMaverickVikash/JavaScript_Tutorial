@@ -151,3 +151,4 @@
     - Equality Coercion
    
 42. **Copy and reference or passed by value and passed by reference:**
+43. **Object Prototype:**
