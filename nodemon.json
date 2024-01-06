@@ -1,0 +1,5 @@
+{
+  "watch": ["JavaScript-Tutorial/regular_expressions.js"],
+  "ext": "js",
+  "exec": "node JavaScript-Tutorial/regular_expressions.js"
+}
