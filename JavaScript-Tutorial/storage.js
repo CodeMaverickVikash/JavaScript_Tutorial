@@ -1,3 +1,7 @@
+/**
+ * Storage is not the concepts of javascript, it's a concepts of browser or web APIs
+ */
+
 // ------------------------------------------- Cookies -----------------------------------
 // to set cookie
 // document.cookie= "username=vikash";

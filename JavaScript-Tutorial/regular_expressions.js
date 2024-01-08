@@ -15,15 +15,8 @@ let regex = /harrsdfgy/;
 // regex = /ha?rryi?t/; //? after character means that character is optional
 // regex = /h\*rry/; // '\' to escape the metachar, metachar will be as a normal string
 
-let str = "h*rry means codewith"; //
+var str = "vikash is good";
+var reg = /vikash1/;
 
-console.log(/vikash/.exec("vikash is good"));
-
-console.log(regex.test(str));
-if (regex.test(str)) {
-  console.log(`The string ${str} matches the expression ${regex.source}`);
-} else {
-  console.log(
-    `The string ${str} does not match the expression ${regex.source}`
-  );
-}
+console.log(reg.exec(str)); // if pattern does not match return null, otherwise return array of info
+console.log(reg.test(str)); // if pattern does not match return false, otherwise return true
