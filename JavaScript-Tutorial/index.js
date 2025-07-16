@@ -124,10 +124,14 @@ console.log(typeof convertedIntoJson);
 
 const convertedIntoObject = JSON.parse(convertedIntoJson);
 console.log(convertedIntoObject);
-console.log(typeof convertedIntoObject);
+console.log(typeof convertedIntoObject);  
 
 // ------------------------------------ Array methods ----------------------------------
 // indexOf, pop, join, push, shift, unshift, toString
+/** 
+ * shift - remove the bigenning Element of array and return the value
+ * unshift - add one or more element at the start of array 
+*/
 var myarr = ["fan", "camera", 23, null, true];
 // myarr.indexOf(23);
 // myarr.pop();
@@ -138,14 +142,28 @@ var myarr = ["fan", "camera", 23, null, true];
 // myarr.toString();
 
 // ---------------------------------------- String methods ---------------------------------
-// indexOf, lastIndexOf, slice, split, replace
+// indexOf, lastIndexOf, slice, splice split, replace
 window.mystring = "vikash is a good boy good";
 // console.log(mystring.length);
 // console.log(mystring.indexOf("good"));
 // console.log(mystring.lastIndexOf("good"));
-// console.log(mystring.slice(0,6));
 // d=mystring.replace("vikash", "sanu");
 // console.log(d, mystring);
+
+/** slice and splice on array or string */
+arr = [1, 2, 3, 4, 5];
+
+// Using slice - array.slice(start, end) - Used to get the new array of array specify the start and end index, does not modify the original array
+let newArr = arr.slice(1, 3);
+console.log(newArr); // [2, 3]
+
+// Using splice - array.splice(start, deleteCount, ...items) - it used to delete the array element by specifying index and count from where need to remove, modify original array, also used to add element at mentioned index
+arr.splice(1, 2); 
+console.log(arr); // [1, 4, 5]
+
+arr = [1, 4];
+arr.splice(1, 0, 2, 3); // add 2 and 3 at index 1
+console.log(arr); // [1, 2, 3, 4]
 
 // --------------------------------------------- Date -----------------------------------
 // let mydate= new Date;
@@ -267,6 +285,7 @@ const userMsg = `${greeting}, ${name}`; // template literal
 })();
 
 // ------------------------------ Closure - function ke ander function ------------------------------
+// A closure is a feature in JavaScript where an inner function has access to the variables of its outer function even after the outer function has finished executing.
 // Anonymous function - Which doesn't have name.
 function sum(a) {
   let c = 4; // lexical scope
