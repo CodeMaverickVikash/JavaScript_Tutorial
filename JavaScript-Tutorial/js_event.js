@@ -1,23 +1,28 @@
+/**
+ * an event is an action or occurrence that happens in the browser — such as:
+A user clicks a button
+A page loads
+A key is pressed
+The mouse moves over an element
+A form is submitted
+ */
+
 // --------------------------- Custom event ---------------------------
-const headerTag = document.getElementById("number");
-
-headerTag.addEventListener("numberChanged", function (e) {
-  console.log(e);
-  headerTag.textContent = e.detail.number;
-  headerTag.style.color = e.detail.textColor;
-});
-
-function changeNumber(n, c) {
-  const event = new CustomEvent("numberChanged", {
-    detail: {
-      number: n,
-      textColor: c,
-    },
+// This is useful when you want different parts of your application to communicate with each other in a decoupled way.
+// Real-World Example: Modal Component - Suppose you want to notify other parts of the app when a modal is opened.
+// Inside modal.js
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+  let customEvent = new CustomEvent("modalOpened", {
+    detail: { modalId: "myModal" }
   });
-
-  // call the event handler
-  headerTag.dispatchEvent(event);
+  document.dispatchEvent(customEvent);
 }
+
+// Now other components can react:
+document.addEventListener("modalOpened", function (e) {
+  console.log("Modal opened:", e.detail.modalId);
+});
 
 // --------------------------- Event object -----------------------------
 document.getElementById("heading").addEventListener("click", function (e) {

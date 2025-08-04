@@ -142,7 +142,7 @@ var myarr = ["fan", "camera", 23, null, true];
 // myarr.toString();
 
 // ---------------------------------------- String methods ---------------------------------
-// indexOf, lastIndexOf, slice, splice split, replace
+// indexOf, lastIndexOf, slice, split, replace
 window.mystring = "vikash is a good boy good";
 // console.log(mystring.length);
 // console.log(mystring.indexOf("good"));
@@ -369,7 +369,13 @@ console.log(storeObj.getSumThree());
 // JavaScript modules allow you to break up your code into multiple files. : means - import and export
 // If we are using normal export then need to use {}, and using default export, don,t need  to use {}.
 
-// ------------------------------ Bind(), call() and apply() -------------------------
+// ------------------------------ Bind(), call() and apply()  -------------------------
+/**
+ * are used to control the value of this and to invoke functions in different contexts. These are particularly useful in object-oriented programming and functional programming patterns.
+ * bind - Create a new function with a specific this
+ * call - invoke the function with specific this and argument list
+ * apply - same as call but uses an array for arguments
+ */
 const lufthansa = {
   airline: "lufthansa",
   iatacode: "LH",
