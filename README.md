@@ -2,6 +2,19 @@
 
 Welcome to the JavaScript Tutorial repository! This repository contains comprehensive learning materials, tutorials, and practice projects for mastering JavaScript from basics to advanced concepts.
 
+## 🌟 Interactive Documentation Viewer
+
+**[📖 Open Interactive Documentation Viewer](docs/index.html)** - Browse all documentation with an interactive sidebar navigation!
+
+Features:
+- 📑 **Sidebar Navigation** - All topics organized and easily accessible
+- 🔍 **Search Functionality** - Quickly find what you're looking for
+- 💻 **Syntax Highlighting** - Beautiful code examples
+- 📱 **Responsive Design** - Works on all devices
+- ⚡ **Fast & Smooth** - Instant topic switching
+
+---
+
 ## 📚 Documentation
 
 ### Complete Learning Resources
